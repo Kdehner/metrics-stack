@@ -35,7 +35,7 @@ resource "docker_container" "telegraf" {
   volumes {
     container_path = "/etc/telegraf/telegraf.conf"
     read_only      = "true"
-    host_path      = "/mnt/bulk2/config/telegraf/telegraf.conf"
+    host_path      = "/mnt/raid-alpha/config/telegraf/telegraf.conf"
   }
   volumes {
     container_path = "/hostfs"
@@ -86,7 +86,7 @@ resource "docker_volume" "influxdb" {
   driver = "local"
   driver_opts = {
     type   = "none"
-    device = "/mnt/bulk2/config/influxdb"
+    device = "/mnt/raid-alpha/config/influxdb"
     o      = "bind"
   }
 }
@@ -96,7 +96,7 @@ resource "docker_volume" "grafana" {
   driver = "local"
   driver_opts = {
     type   = "none"
-    device = "/mnt/bulk2/config/grafana"
+    device = "/mnt/raid-alpha/config/grafana"
     o      = "bind"
   }
 }
