@@ -20,8 +20,9 @@ resource "docker_network" "metrics" {
 }
 
 resource "docker_container" "telegraf" {
-  image = docker_image.telegraf.latest
-  name  = "telegraf"
+  image    = docker_image.telegraf.latest
+  name     = "telegraf"
+  hostname = "kevbot-pi"
   env = ["PUID=1000", "PGID=1001", "TZ=America/Denver",
     "HOST_ETC=/hostfs/etc",
     "HOST_PROC=/hostfs/proc",
